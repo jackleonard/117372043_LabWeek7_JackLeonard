@@ -10,12 +10,12 @@ class FileManager:
     self.lineNumbers = 0
 
 
+#getTotalRowsFunction
   def getTotalRows(self):
-    return len(list(csv.reader(open(self.__path))))
-
-
-
-
+    return len(list(csv.reader(open(self.__path)))) #super hacky and this is not going to scale for larger docs
+    #REFERENCE: The basis of this assumption was Referenced from StackOverflow: https://stackoverflow.com/questions/28973207/get-length-of-csv-file-without-ruining-reader
+    #Access Date: 30/10/2019 @ 14:00
+    #Author: "Joran Beasley"
 
   def readRow(self, r):
     row_num = 0
@@ -26,6 +26,7 @@ class FileManager:
           return row
         row_num += 1
       return None # this means None will return, and will only happen if the row number is not in range.
+
 
 
 
@@ -115,22 +116,6 @@ class DeckFileManager(FileManager):
     if self.readRow(rowNumber) is None:
         return -1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #Q1(B) String representation of Objects Instance
   def __str__(self): #ERROR oVerides Method in Object!?
 
@@ -146,23 +131,3 @@ class DeckFileManager(FileManager):
       return "Object Info - Deck Name: %s" % (self.deckname)
 
 
-  pass#This is where the code shoud go
-  # creating methods to go inside your class here
-
-
-# four instances of class
-
-
-
-'''
-print(deckA)
-print(deckA.readRow(2))
-print((deckA.readRow(2))[:2])
-print((deckA.readRow(2))[2:4])
-print(deckA.readRow(30))
-if deckA.readRow(30) is None:
-    print("It equals none")
-print(deckB)
-print(deckC)
-print(deckD)
-'''

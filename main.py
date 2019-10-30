@@ -17,7 +17,7 @@ while char_pressed != 'q':
       print(deckA.getDeckNumber())
       print(deckA.getRowNumber()) #Testing get row number
       print(deckA)
-      print(deckA.setRowNumber(15)) #Testing set Row Number
+      #print(deckA.setRowNumber(15)) #Testing set Row Number
 
 
 
